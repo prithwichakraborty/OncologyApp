@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add New Goal</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label stacked>Enter new goal:</ion-label>
+    <ion-input type="text" [(ngModel)]="txtNewGoal" text-left></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime  [(ngModel)]="dtGoal"  display-format="MM/YYYY" picker-format="MMMM YYYY"></ion-datetime>
+  </ion-item>
+
+
+  <ion-row>
+
+  </ion-row>
+
+  
+  <ion-row justify-content-center>
+    <button ion-button (click)="btnCreateGoalClicked()">Create Goal</button>
+  </ion-row>
+
+
+
+</ion-content>

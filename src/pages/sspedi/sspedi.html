@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      SSPedi
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-row center>
+    <ion-col text-center>
+      <label text-center text-wrap style="font-weight: bold; font-size: 1.5rem; color: black;">Rate how much this bothered you yesterday or today</label>
+    </ion-col>
+  </ion-row>
+  <ion-row center>
+    <ion-col text-center>
+      <label text-center text-wrap> </label>
+    </ion-col>
+  </ion-row>
+  <ion-row center>
+    <ion-col text-center>
+      <label text-center text-wrap> </label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <button ion-button [disabled] = "!isBtnPrevVisible" float-left (click)="btnPrevClicked()">Prev</button>
+    </ion-col>
+    <ion-col text-center>
+      <ion-input type="text"   required [(ngModel)]="lblComplete"></ion-input>
+    </ion-col>
+    <ion-col>
+      <button ion-button [disabled] = "!isBtnNextVisible" float-right (click)="btnNextClicked()">Next</button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row center>
+    <ion-col text-center>
+      <ion-input type="text" text-center text-wrap style="font-weight: bold; font-size: 1.5rem; color: black;" [(ngModel)]="lblQuestion"></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row center>
+    <ion-col>Not at all</ion-col>
+    <ion-col>A little</ion-col>
+    <ion-col>Medium</ion-col>
+    <ion-col>A lot</ion-col>
+    <ion-col>Extreme</ion-col>
+  </ion-row>
+
+  <ion-row center>
+    <ion-col>
+      <ion-range [(ngModel)]="sliderValue" min="1" max="5" step="1" snaps="true" (ionChange)="rngPointChanged($event)">
+        <ion-label style="font-weight: bold; font-size: 1rem; color: white;" range-left>###</ion-label>
+        <ion-label style="font-weight: bold; font-size: 1rem; color: white;" range-right>###</ion-label>
+      </ion-range>
+    </ion-col>
+  </ion-row>
+
+
+
+  <ion-row center >
+    <ion-col text-center>
+      <button ion-button [disabled]="!isBtnSubmitVisible" (click)="btnSubmitClicked()">Submit</button>
+    </ion-col>
+  </ion-row>
+
+
+
+</ion-content>

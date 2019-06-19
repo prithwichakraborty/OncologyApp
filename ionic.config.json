@@ -1,0 +1,8 @@
+{
+  "name": "OncologyApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "id": "8a4f8000"
+}

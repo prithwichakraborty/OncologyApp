@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Providers</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-searchbar [(ngModel)]="txtSearchInput" [showCancelButton]="true" (ionInput)="onInput()" (ionCancel)="onCancel()">
+  </ion-searchbar>
+
+  <ion-grid>
+    <ion-row align-items: stretch justify-content: space-around>
+      <ion-col align-self: stretch>
+        <button ion-button full style="font-size: smaller" [ngStyle]="{'background-color': btnHospitalColor}"
+          (click)="btnHospitalClicked()">Hospital</button>
+      </ion-col>
+      <ion-col align-self: stretch>
+        <button ion-button full style="font-size: smaller" [ngStyle]="{'background-color': btnPathologyColor}"
+          (click)="btnPathologyClicked()">Pathology</button>
+      </ion-col>
+      <ion-col align-self: stretch>
+        <button ion-button full style="font-size: smaller" [ngStyle]="{'background-color': btnClinicColor}"
+          (click)="btnClinicalTeamClicked()">Clinic</button>
+      </ion-col>
+      <ion-col align-self: stretch>
+        <button ion-button full style="font-size: smaller" [ngStyle]="{'background-color': btnAllColor}" (click)="btnAllClicked()">All</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-row></ion-row>
+
+
+  <ion-list>
+    <button [hidden]="hideListAllProvider" ion-item *ngFor="let allProviderItem of listAllProvider"
+      (click)="providerItemClicked(allProviderItem.Id)">
+      {{ allProviderItem.Name }}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button [hidden]="hideListHospital" ion-item *ngFor="let hospitalItem of listHospital"
+      (click)="providerItemClicked(hospitalItem.Id)">
+      {{ hospitalItem.Name }}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button [hidden]="hideListPathology" ion-item *ngFor="let pathologyItem of listPathology"
+      (click)="providerItemClicked(pathologyItem.Id)">
+      {{ pathologyItem.Name }}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button [hidden]="hideListClinic" ion-item *ngFor="let clinicItem of listClinic"
+      (click)="providerItemClicked(clinicItem.Id)">
+      {{ clinicItem.Name }}
+    </button>
+  </ion-list>
+
+
+
+</ion-content>

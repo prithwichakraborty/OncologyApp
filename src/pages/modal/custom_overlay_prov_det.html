@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Provider Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- <ion-content padding>
+
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provName"></ion-input>
+    <ion-input type="text" class="text_color" [(ngModel)]="provDist"></ion-input>
+  </ion-row>
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provAddr"></ion-input>
+  </ion-row>
+
+
+</ion-content> -->
+
+
+
+
+
+<ion-content [hidden]="hideProviderList">
+
+
+
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provName"></ion-input>
+    <ion-input type="text" class="text_color" [(ngModel)]="provDist"></ion-input>
+  </ion-row>
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provAddr"></ion-input>
+  </ion-row>
+
+
+
+  <ion-row >
+    <img  src="../assets/imgs/ic_map.png">
+  </ion-row>
+
+
+  <ion-row>
+    <ion-label><br></ion-label>
+  </ion-row>
+
+
+  <ion-row style="background-color: red">
+    <ion-label class="text_color">Emergency/24 Hour Contatcs</ion-label>
+  </ion-row>
+
+  <ion-list>
+    <ion-item lines="full" *ngFor="let listItemEmrgContact of listEmrgContact">
+      <ion-label>{{listItemEmrgContact.Location}}<br> {{listItemEmrgContact.Phone}}</ion-label>
+      <button item-right clear (click)='contactItemSelected(listItemEmrgContact.Id)'>
+          <ion-icon name="arrow-dropright"></ion-icon>
+        </button>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-label><br></ion-label>
+  </ion-row>
+
+  <ion-row style="background-color: blue">
+    <ion-label class="text_color">Non-emergency/Day-time Contatcs</ion-label>
+  </ion-row>
+
+  <ion-list>
+    <ion-item lines="full" *ngFor="let listItemNonEmrgContact of listNonEmrgContact">
+      <ion-label>{{listItemNonEmrgContact.Location}}<br> {{listItemNonEmrgContact.Phone}}</ion-label>
+      <button item-right clear (click)='contactItemSelected(listItemNonEmrgContact.Id)'>
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </button>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+
+
+
+<ion-content [hidden]="hideContactDetail">
+
+
+
+
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provName"></ion-input>
+    <ion-input type="text" class="text_color" [(ngModel)]="provDist"></ion-input>
+  </ion-row>
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provAddr"></ion-input>
+  </ion-row>
+
+
+
+
+
+
+
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="contact_name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Phone</ion-label>
+      <ion-input type="text" [(ngModel)]="contact_phone"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="contact_email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Location</ion-label>
+      <ion-input type="text" [(ngModel)]="contact_location"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Appointment</ion-label>
+      <ion-input type="text" [(ngModel)]="contact_appointment"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Note</ion-label>
+      <ion-input type="text" [(ngModel)]="contact_note"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+
+
+</ion-content>

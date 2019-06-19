@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Contact Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provName"></ion-input>
+    <ion-input type="text" class="text_color" [(ngModel)]="provDist"></ion-input>
+  </ion-row>
+  <ion-row style="background-color: blue">
+    <ion-input type="text" class="text_color" [(ngModel)]="provAddr"></ion-input>
+  </ion-row>
+
+
+
+  <ion-row>
+    <ion-label><br></ion-label>
+  </ion-row>
+
+
+  <ion-row [ngStyle]="{'background-color': backColor}">
+    <ion-input type="text" class="text_color" [(ngModel)]="type"></ion-input>
+  </ion-row>
+
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label>Name</ion-label>
+      <ion-input type="text" class="text_color" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Phone</ion-label>
+      <ion-input type="text" class="text_color" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Email</ion-label>
+      <ion-input type="text" class="text_color" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Location</ion-label>
+      <ion-input type="text" class="text_color" [(ngModel)]="location"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Name</ion-label>
+      <ion-input type="text" class="text_color" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Appointment</ion-label>
+      <ion-input type="text" class="text_color" [(ngModel)]="appointment"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label>Note</ion-label>
+      <ion-input type="text" class="text_color" [(ngModel)]="note"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+
+
+</ion-content>

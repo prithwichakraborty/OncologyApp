@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Goal</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row align-items: stretch justify-content: space-around>
+      <ion-col align-self: stretch>
+        <button ion-button full [ngStyle]="{'background-color': btnCompleteGoalColor}"
+          (click)="btnCompleteClicked()">Complete</button>
+      </ion-col>
+      <ion-col align-self: stretch>
+        <button ion-button full [ngStyle]="{'background-color': btnIncompleteGoalColor}"
+          (click)="btnIncompleteClicked()">All</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list [hidden]="!isCompGoalShown">
+    <ion-item lines="full" *ngFor="let compGoalItem of listCompGoals">
+      <ion-label>{{compGoalItem.Goal}}<br> {{compGoalItem.Date}}</ion-label>
+      <ion-checkbox item-right [(ngModel)]="compGoalItem.IsChecked" (ionChange)="compGoalItemSelected(compGoalItem.Id)">
+      </ion-checkbox>
+    </ion-item>
+
+    <!--     <ion-row justify-content-center *ngFor="let compGoalItem of listCompGoals">
+
+      <ion-col align-self-center>
+        <ion-row>
+          <ion-label>{{compGoalItem.Goal}}</ion-label>
+        </ion-row>
+        {{compGoalItem.Date}}
+      </ion-col>
+      <ion-col align-self-center>
+        <ion-checkbox [(ngModel)]="compGoalItem.IsChecked" (ionChange)="compGoalItemSelected(compGoalItem.Id)">
+        </ion-checkbox>
+      </ion-col>
+
+    </ion-row> -->
+
+  </ion-list>
+
+  <ion-scroll scrollY="true" style="height:100vh;">
+  <ion-list [hidden]="!isIncompGoalShown">
+    <ion-item lines="full" *ngFor="let incompGoalItem of listIncompGoals">
+      <ion-label>{{incompGoalItem.Goal}}<br> {{incompGoalItem.Date}}</ion-label>
+      <ion-checkbox item-right [(ngModel)]="incompGoalItem.IsChecked"
+        (ionChange)="incompGoalItemSelected(incompGoalItem.Id)">
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-scroll>
+
+
+  <ion-row justify-content-center>
+    <button ion-button (click)="btnNewGoalClicked()">Add New Goal</button>
+  </ion-row>
+
+
+
+</ion-content>
