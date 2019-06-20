@@ -211,6 +211,18 @@ public getBooldResult(user_id:number) {
 
 }
 
+
+public getWebsiteData() {
+
+  var uri = "https://oncologyappservice.azurewebsites.net/WebService.asmx/GetWebsiteInfo";
+
+  return this.http.post(uri, {}, {})
+    .then(resp => {
+      return resp.data;
+    });
+
+}
+
 //////////////////////////////////////////////////////////////////
 
 

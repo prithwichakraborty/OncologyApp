@@ -35,7 +35,7 @@ export class SspediRating {
 
   constructor(private storage: Storage, private navCtrl: NavController, private alertCtrl: AlertController, private http: HTTP) {
     
-    
+    this.loadData();
   }
 
 
@@ -172,7 +172,7 @@ export class SspediRating {
   private btn_update_graph() {
 
 
-    this.loadData();
+    
     
     let temp = this.chartData_disappoint;
     let t = [temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6]];//this.chartData_disappoint[7];

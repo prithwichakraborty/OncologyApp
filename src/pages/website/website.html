@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Library</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list >
+    <ion-item lines="full" *ngFor="let webItem of listWebItems">
+      <button ion-item (click)="goToWebSite(webItem.Url)">{{webItem.Website}}</button>
+    </ion-item>
+  </ion-list>
+
+
+
+
+</ion-content>

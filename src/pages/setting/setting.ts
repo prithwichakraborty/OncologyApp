@@ -7,6 +7,7 @@ import { DBAdapter } from '../model/dbadapter';
 import { Storage } from '@ionic/storage';
 import { SspediRating } from '../sspedirating/sspedirating';
 import { BloodResult } from '../bloodresult/bloodresult';
+import { WebSite } from '../website/website';
 
 
 @Component({
@@ -47,6 +48,13 @@ export class Setting {
     this.navCtrl.push(BloodResult);
   }
 
+
+  private showLibraryPage() {
+
+    this.navCtrl.push(WebSite);
+
+  }
+  
 
 
 }

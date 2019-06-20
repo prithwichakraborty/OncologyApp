@@ -1,4 +1,3 @@
-
 import {JsonObject, JsonProperty} from "json2typescript";
 
 

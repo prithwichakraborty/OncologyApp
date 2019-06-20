@@ -11,6 +11,8 @@ import { ProvidersPage } from '../pages/providers/proviers';
 import { Setting } from '../pages/setting/setting';
 import { SspediRating } from '../pages/sspedirating/sspedirating';
 import { BloodResult } from '../pages/bloodresult/bloodresult';
+import { WebSite } from '../pages/website/website';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
 import { Custom_Overlay } from '../pages/modal/custom_overlay';
@@ -39,6 +41,7 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
     Setting,
     SspediRating,
     BloodResult,
+    WebSite,
 
     TabsPage,
     Custom_Overlay,
@@ -60,6 +63,7 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
     Setting,
     SspediRating,
     BloodResult,
+    WebSite,
         
     TabsPage,
     Custom_Overlay,
@@ -73,6 +77,7 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
     HTTP,
     DatePicker,
     IonicStorageModule,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

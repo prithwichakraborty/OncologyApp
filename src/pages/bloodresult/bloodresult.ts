@@ -6,7 +6,7 @@ import { JsonConvert } from 'json2typescript';
 import { DBAdapter } from '../model/dbadapter'; 
 import { Storage } from '@ionic/storage';
 import { Chart } from 'chart.js';
-import { TblBloodResult } from '../model/data/tblbloodresult';
+import { TblBloodresult } from '../model/data/tblbloodresult';
 
 @Component({
   selector: 'page-bloodresult',
@@ -35,6 +35,7 @@ export class BloodResult {
 
   constructor(private storage: Storage, private navCtrl: NavController, private alertCtrl: AlertController, private http: HTTP) {
     
+    this.loadData();
     
   }
 
@@ -47,10 +48,10 @@ export class BloodResult {
 
     this.dbadapter = new DBAdapter(this.http, "", {}, {});
     
-    this.dbadapter.getDailyRaiting(this.user_id).then((respData: any) => {
+    this.dbadapter.getBooldResult(this.user_id).then((respData: any) => {
 
       let jsonConvert: JsonConvert = new JsonConvert();
-      let rawData: TblBloodResult[];
+      let rawData: TblBloodresult[];
       this.allSSpediData = [];
       this.chartData_platelets = [];
       this.chartData_neutrophils = [];
@@ -65,18 +66,18 @@ export class BloodResult {
       try {
 
         let jsonObj: Object = JSON.parse(respData);
-        rawData = jsonConvert.deserialize(jsonObj, TblBloodResult);
+        rawData = jsonConvert.deserialize(jsonObj, TblBloodresult);
 
         let count:number = 0;
         
         rawData.forEach(element => {
 
-          let items = new BloodResItems();
+          let items = new BloodresItems();
           items.Id = element.Id;
-          items.Wcc = element.Wcc;
+          //items.Wcc = element.Wcc;
           items.Weight = element.Weight;
           items.Height = element.Height;
-          items.Neutrophils = element.Neutrophils;
+          //items.Neutrophils = element.Neutrophils;
           items.Platelets = element.Platelets;
           items.Hb = element.Hb;
           items.Date = element.Date;
@@ -84,7 +85,7 @@ export class BloodResult {
 
 
           this.chartData_platelets.push(element.Platelets);
-          this.chartData_neutrophils.push(element.Neutrophils);
+          //this.chartData_neutrophils.push(element.Neutrophils);
           this.chartData_hb.push(element.Hb);
 
           
@@ -130,7 +131,7 @@ export class BloodResult {
   private btn_update_graph() {
 
 
-    this.loadData();
+    
     
     let temp = this.chartData_platelets;
     let t = [temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6]];//this.chartData_disappoint[7];
@@ -182,19 +183,11 @@ export class BloodResult {
 
 //secondary data classes
 
-class BloodResItems {
+class BloodresItems {
 
   private _Id: number;
   get Id(): number { return this._Id; }
   set Id(value: number) { this._Id = value; }
-
-  private _Wcc: number;
-  get Wcc(): number { return this._Wcc; }
-  set Wcc(value: number) { this._Wcc = value; }
-
-  private _Neutrophils: number;
-  get Neutrophils(): number { return this._Neutrophils; }
-  set Neutrophils(value: number) { this._Neutrophils = value; }
 
   private _Weight: number;
   get Weight(): number { return this._Weight; }
@@ -208,7 +201,6 @@ class BloodResItems {
   get Hb(): number { return this._Hb; }
   set Hb(value: number) { this._Hb = value; }
 
-
   private _Platelets: number;
   get Platelets(): number { return this._Platelets; }
   set Platelets(value: number) { this._Platelets = value; }
@@ -216,7 +208,6 @@ class BloodResItems {
   private _Date: string;
   get Date(): string { return this._Date; }
   set Date(value: string) { this._Date = value; }
-
 
   private _Day: string;
   get Day(): string { return this._Day; }
