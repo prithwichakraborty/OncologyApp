@@ -30,7 +30,7 @@
     "@ionic/pro": "2.0.4",
     "@ionic/storage": "^2.2.0",
     "call-number": "1.0.1",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "cordova-android": "7.1.4",
     "cordova-plugin-advanced-http": "2.0.3",
     "cordova-plugin-datepicker": "0.9.3",
